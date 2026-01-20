@@ -1,0 +1,2 @@
+- blog in the style of simon willison or jesse fsck
+- publish first article (agentic engineering: old school software engineers vs agents are headed the same way as old school fund managers vs etfs - you can't beat the market)
