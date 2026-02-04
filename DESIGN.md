@@ -25,10 +25,16 @@ musings-blog/
     │   └── 2026-02-04-simplicity.md
     ├── snippets/
     │   └── 2026-02-04-git-tricks.md
-    └── tutorials/
-        └── building-a-cli/
-            ├── 01-introduction.md
-            └── 02-parsing-args.md
+    ├── tutorials/
+    │   └── building-a-cli/
+    │       ├── 01-introduction.md
+    │       └── 02-parsing-args.md
+    └── images/
+        ├── posts/          # Images organized by post
+        │   └── hello-world/
+        │       └── screenshot.png
+        └── shared/         # Reusable images (logo, etc.)
+            └── logo.svg
 ```
 
 ---
@@ -171,12 +177,30 @@ Since this is a client-side SPA on GitHub Pages, we use hash routing:
 |---------|---------|-------------|
 | [marked.js](https://cdn.jsdelivr.net/npm/marked/marked.min.js) | Markdown → HTML | ~8kb |
 | [js-yaml](https://cdn.jsdelivr.net/npm/js-yaml/dist/js-yaml.min.js) | Parse frontmatter | ~10kb |
+| [highlight.js](https://cdn.jsdelivr.net/npm/highlight.js) | Syntax highlighting | ~30kb |
+| highlight.js theme CSS | Code block styling | ~2kb |
 
-**Total: ~18kb** (plus your content)
+**Total: ~50kb** (plus your content)
+
+### Syntax Highlighting Setup
+
+Include highlight.js core and a theme. Recommended theme: **GitHub** (light) for consistency with the minimal design.
+
+```html
+<!-- In <head> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/styles/github.min.css">
+
+<!-- Before closing </body> -->
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
+```
+
+After rendering markdown, call `hljs.highlightAll()` to apply syntax highlighting to all code blocks.
+
+**Supported languages** (auto-detected):
+- JavaScript, TypeScript, Python, Bash, JSON, HTML, CSS, Go, Rust, and 180+ more
 
 Optional additions:
 - [Fuse.js](https://cdn.jsdelivr.net/npm/fuse.js) for search (~6kb)
-- [highlight.js](https://cdn.jsdelivr.net/npm/highlight.js) for syntax highlighting (~30kb + theme)
 
 ---
 
@@ -303,28 +327,63 @@ Inspired by blog.fsck.com:
 - **Spacing**: Generous whitespace, clear hierarchy
 - **Mobile**: Responsive, readable on all devices
 
+### Home Page Layout (blog.fsck.com style)
+
+The home page displays a **scannable list of recent posts** - not full content or excerpts. Each entry shows:
+- **Date** (above, smaller text)
+- **Title** (clickable link, primary focus)
+- **Tags** (below, lowercase, monospaced style)
+
+This allows readers to quickly scan and find content of interest.
+
 ```
 ┌─────────────────────────────────────┐
 │  Musings                            │
 │  Home  Archive  Tags  About         │
 ├─────────────────────────────────────┤
 │                                     │
-│  Post Title                         │
-│  February 4, 2026 · tag1, tag2      │
+│  February 4, 2026                   │
+│  Hello World                        │
+│  meta  first-post                   │
 │                                     │
-│  Post content goes here with good   │
-│  typography and comfortable line    │
-│  length for reading...              │
+│  February 3, 2026                   │
+│  On Simplicity                      │
+│  design  philosophy                 │
 │                                     │
-│  ─────────────────────────────────  │
+│  February 2, 2026                   │
+│  Git: Undo Last Commit              │
+│  git  cli                           │
 │                                     │
-│  Another Post Title                 │
-│  February 3, 2026 · tag3            │
-│                                     │
-│  Post excerpt or full content...    │
+│  February 1, 2026                   │
+│  Building a CLI Tool - Part 1       │
+│  tutorial  cli  node                │
 │                                     │
 ├─────────────────────────────────────┤
-│  © 2026 · RSS                       │
+│  © 2026                             │
+└─────────────────────────────────────┘
+```
+
+### Single Post View
+
+When clicking a post title, the full content is displayed:
+
+```
+┌─────────────────────────────────────┐
+│  Musings                            │
+│  Home  Archive  Tags  About         │
+├─────────────────────────────────────┤
+│                                     │
+│  Hello World                        │
+│  February 4, 2026 · meta, first-post│
+│                                     │
+│  Welcome to my blog. This is the    │
+│  first post with good typography    │
+│  and comfortable line length...     │
+│                                     │
+│  [Full markdown content rendered]   │
+│                                     │
+├─────────────────────────────────────┤
+│  © 2026                             │
 └─────────────────────────────────────┘
 ```
 
@@ -346,15 +405,107 @@ Part navigation (← Previous | Part 2 of 5 | Next →), series overview link.
 
 ---
 
+## Images and Media
+
+Posts can include images, GIFs, and other media using standard markdown syntax. The blog supports elegant display of various image formats.
+
+### Supported Formats
+
+- **Static images**: PNG, JPG, JPEG, WebP, SVG
+- **Animated**: GIF, animated WebP
+- **Other**: Any format the browser supports
+
+### Image Storage
+
+Store images in a dedicated folder within content:
+
+```
+content/
+├── posts/
+│   └── 2026-02-04-hello-world.md
+└── images/
+    ├── posts/
+    │   └── hello-world/
+    │       ├── screenshot.png
+    │       └── demo.gif
+    └── shared/
+        └── logo.svg
+```
+
+### Markdown Syntax
+
+```markdown
+<!-- Basic image -->
+![Alt text](content/images/posts/hello-world/screenshot.png)
+
+<!-- Image with title (shows on hover) -->
+![Alt text](content/images/posts/hello-world/demo.gif "Demo animation")
+
+<!-- External image -->
+![External](https://example.com/image.png)
+```
+
+### CSS Styling for Images
+
+Images are styled for elegant display:
+
+```css
+/* Responsive images that don't overflow */
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 4px;
+}
+
+/* Optional: subtle shadow for screenshots */
+article img:not([src$=".svg"]) {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* GIFs and animations - no extra styling needed */
+/* They play automatically in browsers */
+```
+
+### Image Best Practices
+
+1. **Optimize images** before committing (use tools like ImageOptim, TinyPNG)
+2. **Use WebP** for better compression when browser support isn't a concern
+3. **Keep GIFs short** - they can get large quickly
+4. **Use descriptive alt text** for accessibility
+5. **Relative paths** work best for portability (`content/images/...`)
+
+### Responsive Considerations
+
+The CSS ensures images:
+- Never exceed container width
+- Scale down on mobile
+- Center within the content area
+- Have consistent spacing
+
+No `<picture>` element or srcset needed for this simple blog - the single responsive image approach works well for most content.
+
+---
+
 ## Future Extensibility
 
 The design supports future additions without major changes:
 
 - **Search**: Add Fuse.js, generate search index from content.json
-- **RSS**: Generate `feed.xml` (could be static file updated manually, or use a GitHub Action)
 - **Dark mode**: CSS custom properties, toggle in nav
 - **Comments**: Add Giscus (GitHub Discussions) embed
 - **New content types**: Add to schema, add rendering logic
+
+### RSS Feed (Planned for Later)
+
+RSS is explicitly deferred from the initial implementation. When ready to add:
+
+1. **Option A - Static file**: Manually maintain `feed.xml` or generate it with a script
+2. **Option B - GitHub Action**: Auto-generate `feed.xml` on push using a workflow
+3. **Option C - Client-side**: Generate RSS dynamically (less ideal, but possible)
+
+The manifest (`content.json`) already contains all metadata needed to generate a valid RSS feed.
 
 ---
 
@@ -365,8 +516,8 @@ The design supports future additions without major changes:
 | HTML structure | < 2kb |
 | Inline CSS | < 5kb |
 | Inline JS | < 10kb |
-| CDN deps | ~18kb |
-| **Total (excl. content)** | **< 35kb** |
+| CDN deps (marked + js-yaml + highlight.js) | ~50kb |
+| **Total (excl. content)** | **< 67kb** |
 
 ---
 
@@ -384,11 +535,12 @@ The design supports future additions without major changes:
 
 ---
 
-## Open Questions
+## Resolved Design Decisions
 
-1. **Home page style**: Show full posts (blog.fsck.com style) or excerpts with "read more"?
-2. **Syntax highlighting**: Include highlight.js (~30kb) or skip for now?
-3. **RSS feed**: Include as static file, or add later?
+1. **Home page style**: Display scannable list (date + title + tags) like blog.fsck.com - no full content or excerpts on home page
+2. **Syntax highlighting**: Include highlight.js with GitHub theme for code blocks
+3. **RSS feed**: Deferred to future implementation (see Future Extensibility section)
+4. **Images/Media**: Full support for PNG, JPG, GIF, WebP, SVG with responsive CSS styling
 
 ---
 
