@@ -1,0 +1,13 @@
+{
+  "name": "musings-blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "npx serve .",
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
