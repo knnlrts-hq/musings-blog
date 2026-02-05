@@ -1,16 +1,16 @@
 {
   "site": {
-    "title": "Musings",
-    "author": "Your Name",
+    "title": "Musings & Deep Thoughts",
+    "author": "knnlrts",
     "description": "A personal blog about software, technology, and ideas",
-    "baseUrl": "https://username.github.io/musings-blog"
+    "baseUrl": "https://knnlrts-hq.github.io/musings-blog"
   },
   "content": [
     {
       "slug": "ai-coding-guardians",
       "path": "content/posts/2026-02-04-ai-coding-guardians.md",
       "type": "post",
-      "title": "Quis Custodiet Ipsos Custodes? And the Normalization of Deviance in AI Coding",
+      "title": "Who Watches the AI That Writes Your Code?",
       "date": "2026-02-04",
       "tags": ["ai", "software-engineering", "philosophy", "automation"]
     }
