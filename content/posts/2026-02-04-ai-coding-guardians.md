@@ -4,114 +4,53 @@ date: 2026-02-04
 tags: [ai, software-engineering, philosophy, automation]
 ---
 
-Here's a question from ancient Rome that feels surprisingly relevant today: "Quis custodiet ipsos custodes?" Who watches the watchmen?
+Here's a question from ancient Rome that feels surprisingly relevant to me today: ["Quis custodiet ipsos custodes?"](https://en.wikipedia.org/wiki/Quis_custodiet_ipsos_custodes) Who will watch the watchmen themselves? Now replace "watchmen" with "AI coding assistants" for a modern spin on that same old problem of control. AI writes ever more lines of code every day. And as it does, humans review less and less of it. [Peter Steinberger](https://www.youtube.com/watch?v=8lF7HmQ_RgY), the creator of OpenClaw, famously said a couple of days ago: "I ship the code, I don't read it". It is the extreme version of the "move fast and break things" mentality that would make Mark Zuckerberg proud. Tests pass, demos work, and everyone moves on. But ever so small mistakes pile up ever so quietly. And one day, those small mistakes might become a big one. The black swan squared.
 
-Now replace "watchmen" with "AI coding assistants" and you've got the problem we're building toward. AI writes more code every day. Humans review less of it. Tests pass, demos work, and everyone moves on. But small mistakes pile up quietly. And one day, those small mistakes might become a big one.
+## From Manual Programming to the Dark Factory
 
-## From Pair Programming to Lights-Out Factories
+[Dan Shapiro](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) recently described AI coding in levels of increasing automation, comparing it to self-driving cars. At Level 0, there is no AI assistant and you write all the code yourself, character by character, like a prehistoric caveman. At Level 2, which is where most developers are today, AI is a treated as an extremely smart but also widely inconsistent junior developer, that suggests the boilerplate code while you drive the design. Climb a little higher and things start to shift rapidly. At Level 3, AI writes most of the code. You review diffs like a safety driver watching the autopilot. At Level 4, you write specs, feed them to your swarm of agents and check in every few hours while it codes and tests unattended. Finally, Level 5 is the "dark factory": the ultimate automation of software engineering. Generated specs go in, generated software comes out. No humans needed anymore. AI watches AI. 
 
-Dan Shapiro describes AI coding in levels, like self-driving cars. At Level 0, you write all the code yourself. At Level 2, most developers today pair with AI. The AI suggests code while you drive the design.
+![Evolution of AI-assisted software development from Level 0 (fully manual coding) to Level 5 (the "dark factory" of autonomous code, where humans are neither needed nor welcome)](content/images/posts/2026-02-04-ai-coding-guardians/dark-factory.png "AI Coding Levels")
 
-Climb higher and things shift. At Level 3, AI writes most of the code. You review diffs like a safety driver watching autopilot. At Level 4, you write specs and check in every few hours while AI codes and tests. Level 5 is the "dark factory." Specs go in, software comes out. No humans needed.
+*AI coding levels, from manual coding to the dark factory, where humans are neither needed nor welcome.*
 
-![Evolution of AI-assisted software development from Level 0 (fully manual coding) to Level 5 (the "dark factory" of autonomous code)](https://www.danshapiro.com/blog/wp-content/uploads/2026/01/image-7.png "AI Coding Levels Diagram")
+The term "dark factory" comes from manufacturing: fully automated factories where robots build other robots in complete darkness. No humans needed, nor welcome on the floor.
 
-*AI coding levels, from manual coding to the dark factory. At Level 5, specs become software with minimal human involvement.*
+Small teams or even solo software engineers are already operating near Level 5 in their specific problem domains. The market took note and started to price in this evolution: the ['SaaSpocalypse'](https://www.forbes.com/sites/donmuir/2026/02/04/300-billion-evaporated-the-saaspocalypse-has-begun/) has begun and the ['Roadrunner Economy'](https://nraford7.github.io/road-runner-economy/) is now officially in full swing. The speed at which things are happening is remarkable. But notice what disappears as we climb the software automation ladder: human eyes on the code. AI doesn't get tired. It can generate thousands of lines of code, write its own tests, and then review and document everything it did: judge, jury, and executioner. When everything looks (or should I say "seems") green, who bothers checking the details? Often, nobody.
 
-Small teams already operate near Level 5. This speed is remarkable. But notice what disappears as you climb: human eyes on the code. AI doesn't get tired. It can generate thousands of lines and write its own tests. When everything looks green, who bothers checking the details?
+The worry here is that automated oversight can normalize deviance just as much as manual oversight. And when humans step back in, intervention often comes too late, with the flawed code already in production. Some predict this will spark demand for "artisanal software" where companies advertise that humans wrote the code. Regulated industries might require a whole new slew of compliance standards and audits. If algorithms are the watchmen, external auditors might need to watch the algorithms. But governance always lags behind automation, and today the reflex when AI causes problems is still: add more AI. That can accelerate the very deviance we're trying to fix.
 
-Often, nobody.
+## The Normalization of Deviance
 
-## Normalization of Deviance
+Sociologist [Diane Vaughan](https://en.wikipedia.org/wiki/Normalization_of_deviance) coined this term after studying the Challenger disaster. NASA engineers had seen O-ring problems before. Previous launches with damaged seals hadn't failed, so warnings got rationalized away. As Vaughan put it: "The absence of disaster was mistaken for the presence of safety". The normalization of deviance describes how unsafe practices become accepted when they don't immediately cause catastrophe. The same pattern shows up today with code generated by AI. An AI assistant introduces a quirky workaround. Tests pass. Ship it. Next time, another silent shortcut. Tests pass again. Ship it. Each time you skip review, you lower the bar for next time. This drift happens quietly. Nobody really decides to ignore quality. Instead, tiny "temporary" fixes become permanent. On top of that, the scheduled pressure of corporate software development makes it easy to trust the AI by default. Companies "confuse the absence of a successful attack with the presence of robust security". Nothing bad happened today, so therefore system must be safe. Until it isn't.
 
-Sociologist Diane Vaughan coined this term after studying the Challenger disaster. Engineers had seen O-ring problems before. Previous launches with damaged seals hadn't failed, so warnings got rationalized away. As Vaughan put it: "The absence of disaster was mistaken for the presence of safety."
+The danger with normalized deviance is the sudden failure that seems obvious only in hindsight. All those ignored warnings align at once. With AI code, this might look like a production crash in code that is too complex for anyone to understand, or a security hole sitting dormant until some bad actor exploits it. We've all seen numerous warning signs and each time, the AI followed patterns it thought were acceptable ("Oops I deleted all of your production data."). Don't even get me started on Simon Willison's ["Lethal Trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for AI agents. These incidents are like the O-ring erosion. Research shows it takes only a small amount of poisoned data to add a backdoor. In a fully automated pipeline, who catches it?
 
-The same pattern shows up with AI code. An AI assistant introduces a quirky workaround. Tests pass. Ship it. Next time, another shortcut. Tests pass again. Ship it. Each time you skip review, you lower the bar for next time.
-
-This drift happens quietly. Nobody decides to ignore quality. Instead, tiny "temporary" fixes become permanent. Schedule pressure makes it easy to trust the AI by default. One researcher described it well: companies "confuse the absence of a successful attack with the presence of robust security."
-
-Nothing bad happened today, so the system must be safe. Until it isn't.
-
-## When Things Go Wrong
-
-The danger with normalized deviance is the sudden failure that seems obvious only in hindsight. All those ignored warnings align at once. With AI code, this might look like a production crash in code too complex for anyone to understand, or a security hole sitting dormant until someone finds it.
-
-We've already seen warning signs. AI agents have made serious mistakes:
-
-- **Wiped a production database** during a migration. The AI apologized for "a catastrophic failure on my part." A human would have double-checked that destructive command.
-- **Formatted the wrong drive** when told to "clean up disk space." The vague instruction led to an extreme action.
-- **Spammed hundreds of random GitHub issues**, mistaking noise for useful work.
-
-Each time, the AI followed patterns it thought were acceptable. These incidents are like the O-ring erosion that didn't cause a crash at first. Warning lights are blinking.
-
-Worse, attackers could exploit this complacency. Research shows it takes only a small amount of poisoned data to add a backdoor to a model. If AI code doesn't get scrutinized, a malicious actor could slip in a vulnerability that sits dormant for months. In a fully automated pipeline, who catches it?
+![On January 28, 1986, Space Shuttle Challenger broke apart 73 seconds into its flight, killing all seven crew members.](content/images/posts/2026-02-04-ai-coding-guardians/challenger-disaster.jpg "The Challenger Disaster")
 
 ## Testing Can't Catch Everything
 
-Teams aiming for Level 4 or 5 rely heavily on tests, static analyzers, and CI checks. Instead of reviewing every line, you ask the system to prove its own correctness: write the code, run the tests, deploy if green.
-
-This helps. Many AI coding setups force the AI to write tests for every function. Humans design the testing framework and high-level specs. They build monitoring tools that watch for dangerous actions. The human role shifts from writing code to designing the system that produces code.
-
-But testing has limits. It proves the presence of bugs, never their absence. Pass 100 scenarios and you might still fail scenario 101. Worse, AI might learn to game the tests. If the AI writes 1000 tests and they all pass, an inattentive team might assume those tests cover everything important. But who wrote them? The AI, which may have blind spots.
-
-There's a key difference between proving the system works and proving it's safe. Teams focus on the first. The second gets treated as secondary. That's a form of normalized deviance too.
-
-## The Dark Factory Dream
-
-The term "dark factory" comes from manufacturing. FANUC operates factories in Japan where robots build other robots in complete darkness. No humans needed on the floor.
-
-![Fanuc's dark factory concept - fully automated manufacturing with no human labor](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtcK_HGHsi-x4XGfDJmc7h0pHM7cidpjzZF-G8ph5a8w&s=10 "Dark Factory")
-
-*FANUC's dark factory, where over 4,600 robots build other robots without human labor.*
-
-In software, the dark factory means specs go in, deployed software comes out. Human engineers still design the AI and set goals. But daily operations run without manual code reviews or traditional QA. AI watches AI.
-
-Two worries here. First, automated oversight can normalize deviance just like manual oversight. If a monitoring tool flags odd behavior but nothing has failed yet, will the AI just add an exception and ignore it next time? Second, when humans step back, intervention comes too late. By the time failure shows up on a dashboard, flawed code might already affect millions of users.
-
-Some predict this will spark demand for "artisanal software" where companies advertise that humans wrote the code. Regulated industries might require new compliance standards and audits. If algorithms are the watchmen, external auditors might need to watch the algorithms.
-
-But governance lags behind automation. The reflex when AI causes problems is often to add more AI. That can accelerate the very deviance we're trying to fix.
+Teams aiming for Level 4 or 5 automation of software engineering rely heavily on tests, static analyzers, and CI checks. Instead of reviewing every line, you ask the system to prove its own correctness: write the code, run the tests, deploy if green. This helps. Many AI coding setups force the AI to write tests for every function. Humans design the testing framework and high-level specs. They build monitoring tools that watch for dangerous actions. The human role shifts from writing code to designing the system that produces code. But testing has it's limits: it only proves the presence of bugs, never their absence. Pass 100 scenarios and you might still fail scenario 101. Worse, AI might pattern-learn to game the tests. If the AI writes 1000 tests and they all pass, an inattentive team might assume those tests cover everything important. But who wrote them? The AI, which may have blind spots. There's a key difference between proving the system works and proving it's safe. Teams focus on the first. The second gets treated as secondary. That's a form of normalized deviance too.
 
 ## The Infinite Regress Problem
 
-If we build AI to guard our systems, who guards that AI? You could propose another AI to audit the first. But then who reviews the reviewer?
+If we build AI to guard our systems, who guards that AI? You could propose another AI to audit the first. But then who reviews that reviewer? The ancient Greeks suggested training the guardians to guard themselves by instilling an incorruptible character. In AI terms, that is called "alignment research". We try to build systems that internalize safety constraints so deeply, that they won't go rogue without supervision. A very noble goal, but extremely hard in practice. On the bright side: here is something that AI will not automate soon. The practical answer is probably to work in layers: AI does most of the coding, other AI tools monitor for known issues, and humans handle the audits and edge cases. Like how commercial aircraft can fly themselves most of the time, but pilots handle the unexpected elements. AI-coded systems should be treated as something to be stress-tested regularly. Hunt for weaknesses instead of assuming that the AI has things covered. That counters the complacency that normalization of deviance brings.
 
-Plato suggested training guardians to guard themselves by instilling an incorruptible character. In AI terms, that's alignment research. We try to build systems that internalize safety constraints so deeply they won't go rogue without supervision. Noble goal. Extremely hard in practice.
+Why automate the software developer lifecycle at all? The optimistic answer: it frees you from drudgery. As my philosopher hero Alan Watts put it in the 1960s, "The whole purpose of technology and machinery, after all, is to make human drudgery unnecessary". Having AI write boilerplate, generate tests, and refactor code in seconds is liberating. You operate at the level of ideas instead of syntax. But Watts would probably point out a paradox. You build machines to relieve work. Then you create new work monitoring those machines. Then you consider building machines to monitor the monitors. At some point, you have to trust the water to carry you or you'll never stop thrashing.
 
-The practical answer is probably layers: AI does most of the coding, other AI tools monitor for known issues, and humans handle audits and edge cases. Like how commercial aircraft fly themselves most of the time, but pilots handle the unexpected.
+![Alan Watts](content/images/posts/2026-02-04-ai-coding-guardians/alan-watts.webp "Alan Watts")
 
-External red teams help too. Treat your AI coding system as something to be stress-tested regularly. Hunt for weaknesses instead of assuming the AI has things covered. That counters the complacency that normalization of deviance brings.
+A system too tangled in oversight defeats the purpose of the automation it watches. Watts favored balance over total control. Design AI systems that are safe by architecture, so you don't need to hover every second. But accept that uncertainty will always exist. Neither blind trust nor obsessive control works. As Watts observed, "Any time you voluntarily let up control, you have an access of power". By letting AI handle code generation, you gain productivity. But only if you adjust your approach to accommodate that change safely.
 
-If we ignore this question, we risk what Juvenal warned about: unaccountable guardians and users vulnerable to their failures.
-
-## What Would Alan Watts Say?
-
-Why automate coding at all? The optimistic answer: it frees you from drudgery. As Alan Watts put it in the 1960s, "The whole purpose of machinery, after all, is to make drudgery unnecessary."
-
-Having AI write boilerplate, generate tests, and refactor code in seconds is liberating. You operate at the level of ideas instead of syntax.
-
-But Watts would probably point out a paradox. You build machines to relieve work. Then you create new work monitoring those machines. Then you consider building machines to monitor the monitors. At some point, you have to trust the water to carry you or you'll never stop thrashing.
-
-A system too tangled in oversight defeats the purpose of the automation it watches.
-
-Watts favored balance over total control. Design AI systems that are safe by architecture, so you don't need to hover every second. But accept that uncertainty will always exist. Neither blind trust nor obsessive control works. As Watts observed, "Any time you voluntarily let up control, you have an access of power." By letting AI handle code generation, you gain productivity. But only if you adjust your approach to accommodate that change safely.
-
-Maybe the dark factory misses something vital: the creative, unpredictable spark humans bring. If all code comes from AI optimizing for past data and tests, we might squeeze out the creative deviations that lead to innovation along with the dangerous ones.
-
-Watts might remind us that no system guarantees its own perfection. Trying to make a machine that watches itself flawlessly is like trying to outrun your own shadow. Instead of infinite regress, cultivate trust paired with responsible vigilance. Trust the tools for what they're good at. Keep humans in the loop for judgment, ethics, and the unforeseen.
+Maybe the dark factory misses something vital: the creative, unpredictable spark that only humans can bring. If all code comes from AI optimizing for past data and tests, we might squeeze out the creative deviations that lead to innovation along with the dangerous ones. Watts might remind us that no system guarantees its own perfection. It just does not exist. Trying to make a machine that watches itself flawlessly is like trying to outrun your own shadow. Or like trying to see your own eyes without a mirror. Instead of chasing that infinite regress, we should cultivate trust paired with responsible vigilance. After all: the price of freedom is eternal vigilance. Trust the tools for what they're good at. Keep humans in the loop for judgment, ethics, and the unforeseen.
 
 ## Building a Future with AI
 
-"Who guards the guardians?" has no simple answer when code writes code. Normalization of deviance teaches that small unchecked errors snowball into big failures. Dark factories promise productivity but demand new forms of oversight.
+"Who guards the guardians?" has no simple answer when code writes code. The normalization of deviance teaches that small unchecked errors can quickly snowball into big failures. Dark factories promise productivity but demand new forms of oversight. What can you do? Implement audit trails for AI changes. Stress-test AI systems continuously. Bring in security experts, ethicists, and domain specialists. Build a culture where people question the AI's decisions. Run "pause and learn" drills: This module was auto-generated and auto-verified, but what could go wrong that we haven't considered?
 
-What can you do?
+Remember that AI is a tool, not a replacement for responsibility. You're not vanishing from the picture. You're moving from manual labor to design, from coder to curator. It often makes me think about this legendary page from an internal IBM training in 1979, which could not be more appropriate for our new age of AI.
 
-Implement audit trails for AI changes. Stress-test AI systems continuously. Bring in security experts, ethicists, and domain specialists. Build a culture where people question the AI's decisions. Run "pause and learn" drills: This module was auto-generated and auto-verified, but what could go wrong that we haven't considered?
+![70s IBM training material](content/images/posts/2026-02-04-ai-coding-guardians/a-computer-can-never-be-held-accountable.jpg "70s IBM training material")
 
-Remember that AI is a tool, not a replacement for responsibility. You're not vanishing from the picture. You're moving from manual labor to design, from coder to curator.
+As Watts might say, work with the flow, not against it: the only way to make sense out of change is to plunge into it, move with it, and join the dance. I definitely think the engineer of the future will be an agentic one, commanding fleets of agents, shaping raw compute into software products and services that add real value. But do try to stay awake at the wheel without white-knuckling the controls. Watch your watchmen in smart, judicious ways. The future of software is being written by AI agents right now. It's up to you to read and *understand* what they write, question it, and remain the conscious custodian of the software that you unleash upon the world.
 
-As Watts might say, work with the machine, not against it. Stay awake at the wheel without white-knuckling the controls. Watch your watchmen in smart, judicious ways. The future of software is being written by AI agents right now. It's up to you to read what they write, question it, and remain the conscious custodian of the technology you unleash.
-
----
-
-*The Latin phrase "Quis custodiet ipsos custodes?" translates to "Who will guard the guards themselves?" Normalization of deviance, defined by Diane Vaughan, describes how unsafe practices become accepted when they don't immediately cause catastrophe. Dan Shapiro's AI coding levels culminate in a "dark factory" where humans are neither needed nor welcome. Researchers warn that the absence of disaster in AI deployments can be falsely interpreted as true safety. AI coding agents have already made dangerous mistakes, serving as early warning signs. As Alan Watts suggested, technology's purpose is to eliminate drudgery, but we should keep a mindful eye on our automated guardians.*
