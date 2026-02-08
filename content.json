@@ -7,12 +7,26 @@
   },
   "content": [
     {
+      "slug": "hello-world",
+      "path": "content/posts/2026-01-05-hello-world.md",
+      "type": "post",
+      "title": "Hello, world (from me and Claude Code)",
+      "date": "2026-01-05",
+      "tags": ["meta", "ai", "software-engineering"]
+    },
+    {
       "slug": "ai-coding-guardians",
       "path": "content/posts/2026-02-04-ai-coding-guardians.md",
       "type": "post",
       "title": "Who Watches the AI That Writes Your Code?",
       "date": "2026-02-04",
-      "tags": ["ai", "software-engineering", "philosophy", "automation"]
+      "tags": ["ai", "software-engineering", "philosophy", "automation"],
+      "images": [
+        "content/images/posts/2026-02-04-ai-coding-guardians/ai-assisted-software.png",
+        "content/images/posts/2026-02-04-ai-coding-guardians/challenger-disaster.jpg",
+        "content/images/posts/2026-02-04-ai-coding-guardians/alan-watts02.png",
+        "content/images/posts/2026-02-04-ai-coding-guardians/a-computer-can-never-be-held-accountable.jpg"
+      ]
     }
   ]
 }
