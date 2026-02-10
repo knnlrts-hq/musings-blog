@@ -1,5 +1,5 @@
 ---
-title: "Hello, world (from me and Claude Code)"
+title: "Hello World! (From Me and Claude Code)"
 date: 2026-01-05
 tags: [meta, ai, software-engineering]
 ---
@@ -31,15 +31,12 @@ Still: right now? It's very exciting.
 
 Here's the part that feels mildly absurd to me: five minutes before this website existed, it didn't. Then I fired up Claude Code (but I'm sure any other coding agent could do) and typed the following prompt:
 
-```bash
-Hey Claude, what's up? 
-Please use your skills to help me brainstorm and then implement a clean, minimalist blog that can be hosted as a single HTML file using inline JavaScript and CSS. No React.
-Load dependencies from a CDN. Keep it small.
-Make it easy to add new blog posts, quotes, snippets, and multi-part tutorial posts.
-Once we're aligned, create a design doc and implement it.
-Provide the configuration to host on GitHub Pages.
-```
-```
+> Hey Claude, what's up? 
+> Please use your skills to help me brainstorm and then implement a clean, minimalist blog that can be hosted as a single HTML file using inline JavaScript and CSS. No React.
+> Load dependencies from a CDN. Keep it small.
+> Make it easy to add new blog posts, quotes, snippets, and multi-part tutorial posts.
+> Once we're aligned, create a design doc and implement it.
+> Provide the configuration to host on GitHub Pages.
 
 That's it. The cat is out of the bag. And it is not ever going back in. If you're a blogging platform vendor reading this: I'm sorry. I truly am. But also... this is just one single HTML file. I guess the "SaaSpocalypse" is real after all.
 
