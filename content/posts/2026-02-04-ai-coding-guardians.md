@@ -10,6 +10,7 @@ Here's a question from ancient Rome that feels surprisingly relevant to me today
 [Dan Shapiro](https://www.danshapiro.com/blog/2026/01/the-five-levels-from-spicy-autocomplete-to-the-software-factory/) recently described AI coding in levels of increasing automation, comparing it to self-driving cars. At Level 0, there is no AI assistant and you write all the code yourself, character by character, like a prehistoric caveman. At Level 2, which is where most developers are today, AI is a treated as an extremely smart but also wildly inconsistent junior developer, that suggests the boilerplate code while you drive the design. Climb a little higher and things start to shift rapidly. At Level 3, AI writes most of the code. You review diffs like a safety driver watching the autopilot. At Level 4, you write (or rather generate) specs, feed them to your swarm of agents and check in every few hours while it codes and tests unattended. Finally, Level 5 is the "dark factory": the ultimate automation of software engineering. High-level directives go in, generated software comes out. AI watches AI. The term "dark factory" comes from manufacturing: fully automated factories where robots build other robots in complete darkness. No humans are neither needed, nor welcome on the factory floor.
 
 ![AI Coding Levels](content/images/posts/2026-02-04-ai-coding-guardians/ai-assisted-software.png "AI Coding Levels")
+
 *The evolution of AI-assisted software development from level 0 (fully manual coding) to level 5 (the "dark factory" of autonomous code).*
 
 Small teams or even solo software engineers on the cutting edge are already operating near Level 5 in their specific problem domains. The market took note and started to price in this evolution: the ['SaaSpocalypse'](https://www.forbes.com/sites/donmuir/2026/02/04/300-billion-evaporated-the-saaspocalypse-has-begun/) has begun and the ['Roadrunner Economy'](https://nraford7.github.io/road-runner-economy/) is now officially in full swing. The speed at which things are happening is remarkable. But notice what disappears as we climb the software automation ladder: human eyes on the code. AI doesn't get tired. It can generate thousands of lines of code, write its own tests, and then review and document its own work: judge, jury, and executioner. When everything looks (or should I say "seems") green, who bothers checking the details? Often, nobody.
@@ -22,6 +23,7 @@ Sociologist [Diane Vaughan](https://en.wikipedia.org/wiki/Normalization_of_devia
 The danger with normalized deviance is the sudden failure that seems obvious only in hindsight. All those ignored warnings align at once. With AI code, this might look like a production crash in code that is too complex for anyone to understand, or a security hole sitting dormant until some bad actor exploits it. Don't even get me started on Simon Willison's ["Lethal Trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) for AI agents. These incidents are like the O-ring erosion. Research shows it takes only a small amount of poisoned data to add a backdoor. In a fully automated pipeline, who catches it?
 
 ![The Challenger Disaster](content/images/posts/2026-02-04-ai-coding-guardians/challenger-disaster.jpg "The Challenger Disaster")
+
 *On January 28,1986, Space Shuttle Challenger broke apart 73 seconds into its flight, killing all seven crew members.*
 
 ## Testing Can't Catch Everything
@@ -33,6 +35,7 @@ If we give AI the task to guard our systems, then who guards that AI? You could 
 Why automate the software developer lifecycle at all? The optimistic answer: it frees you from the monotonic toil involved in it. As one of my favorite philosophers, Alan Watts, put it in the 1960s, "The whole purpose of technology and machinery, after all, is to make human drudgery unnecessary". Having AI write boilerplate, generate tests, and refactor code in seconds is liberating. You operate at the level of ideas instead of syntax. But Watts would probably point out a paradox. You build machines to relieve work. Then you create new work monitoring those machines. Then you consider building machines to monitor the monitors. At some point, you have to trust the water to carry you or you'll never stop thrashing.
 
 ![Alan Watts](content/images/posts/2026-02-04-ai-coding-guardians/alan-watts02.png "Alan Watts")
+
 *Alan Watts*
 
 A system too tangled in oversight defeats the purpose of the automation it watches. Watts favored balance over total control. Design AI systems that are safe by architecture, so you don't need to hover over it every second. But accept that uncertainty will always exist. Neither blind trust nor obsessive control works. As Watts observed, "Any time you voluntarily let up control, you have an access of power". By letting AI handle code generation, you gain productivity. But only if you adjust your approach to accommodate that change safely.
@@ -45,6 +48,7 @@ Maybe the dark factory misses something vital: the creative, unpredictable spark
 Remember that AI is a tool, not a replacement for responsibility. Humans and software engineers are definitely not vanishing from the picture. You're moving from manual labor to design, from coder to curator. It often makes me think about this legendary page from an internal IBM training in 1979, which could not be more appropriate for our new age of AI:
 
 ![70s IBM training material](content/images/posts/2026-02-04-ai-coding-guardians/a-computer-can-never-be-held-accountable.jpg "70s IBM training material")
+
 *Timeless wisdom from the 1970s.*
 
 As Watts might say, work with the flow, not against it: "the only way to make sense out of change is to plunge into it, move with it, and join the dance". I definitely think the engineer of the future will be an agentic one, commanding fleets of agents, shaping raw compute into software products and services that add real value. But do try to stay awake at the wheel without white-knuckling the controls. Watch your watchmen in smart, judicious ways. The future of software is being written by AI agents right now. It's up to you to read and *understand* what they write, question it, experiment with it, and remain the conscious custodian of the software that you unleash upon the world.
