@@ -453,10 +453,14 @@
     .about-photo {
       width: 160px;
       min-width: 160px;
-      height: 160px;
-      // border-radius: 50%;
-      object-fit: cover;
+      height: auto;
+      display: block;
+      flex: 0 0 160px;
+      object-fit: contain;
+      object-position: center;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      /* border-radius: 50%; */
+      /* border-radius: 12px; */
     }
 
     .about-intro {
@@ -482,7 +486,8 @@
       .about-photo {
         width: 120px;
         min-width: 120px;
-        height: 120px;
+        height: auto;
+        flex: 0 0 120px;
       }
     }
 
@@ -951,7 +956,7 @@
       const app = document.getElementById('app');
       app.innerHTML = `
         <div class="about-header">
-          <img class="about-photo" src="content/images/shared/7EAA39CA-97D1-4B76-9FE2-F3BE3DD3646D.PNG" alt="knnlrts" style="object-position: center 25%;">
+          <img class="about-photo" src="content/images/shared/7EAA39CA-97D1-4B76-9FE2-F3BE3DD3646D.PNG" alt="knnlrts">
           <div class="about-intro">
             <h1>About</h1>
             <p>My wife insists I'm a Ramsey Nasr lookalike 👀. I'll let you be the judge.</p>
