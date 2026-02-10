@@ -853,7 +853,7 @@
           const imgParent = img.parentElement;
           if (imgParent && imgParent.tagName === 'P') {
             const nextEl = imgParent.nextElementSibling;
-            if (nextEl && nextEl.tagName === 'P' && nextEl.children.length === 1 && nextEl.children[0].tagName === 'EM' && nextEl.textContent === nextEl.children[0].textContent) {
+            if (nextEl && nextEl.tagName === 'P' && nextEl.children.length === 1 && nextEl.children[0].tagName === 'EM' && nextEl.textContent.trim() === nextEl.children[0].textContent.trim()) {
               const figure = document.createElement('figure');
               const figcaption = document.createElement('figcaption');
               figcaption.textContent = nextEl.children[0].textContent;
