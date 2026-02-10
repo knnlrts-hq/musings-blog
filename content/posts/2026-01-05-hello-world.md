@@ -11,6 +11,7 @@ And poof! Blogging suddenly became something I could actually ship in between ev
 So here we are. One small item checked off. The rest of my to-do/wishlist is still enormous, but today it's slightly less embarrassing.
 
 This will be a personal musings and deep-thoughts blog about whatever I'm currently thinking about, which tends to cluster around:
+- Product Management
 - Software engineering
 - Math
 - Finance
