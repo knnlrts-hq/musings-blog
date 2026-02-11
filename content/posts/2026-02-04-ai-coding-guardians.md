@@ -45,7 +45,7 @@ Maybe the dark factory misses something vital: the creative, unpredictable spark
 ## Building a Future with AI
 "Who guards the guardians?" has no simple answer when code writes code. The normalization of deviance teaches that small unchecked errors can quickly snowball into big failures. Dark factories promise productivity but demand new forms of oversight: implement audit trails for AI changes. Stress-test AI systems continuously. Bring in security experts, ethicists, and domain specialists. Build a culture where people question and test the AI's decisions, instead of blindly trusting them.
 
-Remember that AI is a tool, not a replacement for responsibility. Humans and software engineers are definitely not vanishing from the picture. You're moving from manual labor to design, from coder to curator. It often makes me think about this legendary page from an internal IBM training in 1979, which could not be more appropriate for our new age of AI:
+Remember that AI is a tool, not a replacement for responsibility. Humans and software engineers are definitely not vanishing from the picture. You're moving from manual labor to design, from coder to curator. And ultimately the people using the tool are still the ones on the hook, which means expert tool users will be in great demand. It often makes me think about this legendary page from an internal IBM training in 1979, which could not be more appropriate for our new age of AI:
 
 ![70s IBM training material](content/images/posts/2026-02-04-ai-coding-guardians/a-computer-can-never-be-held-accountable.jpg "70s IBM training material")
 
