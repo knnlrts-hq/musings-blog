@@ -25,7 +25,7 @@ I may post a lot. I may post nothing. You might love it. You might leave immedia
 
 ![Rambling on like a madman](content/images/posts/2026-01-05-hello-world/rambling.gif "Rambling on like a madman")
 
-*Me rambling on like a madman (fun fact: as multiple people already pointed out to me, I do have a tendency to speak quite fast and not managing the cognitive overload. I'm working on it.)*
+*Me rambling on like a madman (fun fact: as multiple people already pointed out to me, I do have a tendency to speak quite fast and not adequately managing the cognitive overload. I'm working on it.)*
 
 ## The origin story
 Of course I was already immersed in and tinkering with AI and LLMs for some time now (at least tangentially), but something shifted over the 2025 Christmas holidays. The collective mood in the tech blogosphere changed shortly after the public releases of Claude Opus 4.5 and GPT-5.2: agentic workflows went from "mostly hype" to "hold my beer, this actually works". Language models appear to be getting exceedingly good at long-running software development tasks, when supported by the correct environment and tooling.
