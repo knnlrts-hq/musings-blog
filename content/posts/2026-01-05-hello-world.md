@@ -23,7 +23,7 @@ This blog is mostly my personal sense-making: notes from the stream(s) of consci
 Sometimes you'll get a well-articulated post. Sometimes I will be rambling on like a madman. Sometimes a small code snippet. Sometimes a quote that made me pause mid-scroll and stare dramatically into the distance.
 I may post a lot. I may post nothing. You might love it. You might leave immediately (respect). Either way, welcome.
 
-![Rambling on like a madman](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZzBoeWhuMGNuZjVpdHU4eGNnNnY4dnlzdXpqZ2g4M2RzZjBxYmZtZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/icgArcntfH5C0/giphy.gif "Rambling on like a madman")
+![Rambling on like a madman](content/images/posts/2026-01-05-hello-world/rambling.gif "Rambling on like a madman")
 
 *Me rambling on like a madman (fun fact: as multiple people already pointed out to me, I do have a tendency to speak quite fast and not managing the cognitive overload. I'm working on it.)*
 
